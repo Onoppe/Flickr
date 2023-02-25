@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Photo: Decodable {
+struct Photo: Decodable, Identifiable {
     let id: String
     let farm: Int
     let server: String

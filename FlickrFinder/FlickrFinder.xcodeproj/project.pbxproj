@@ -31,6 +31,7 @@
 		7439718229AA8C0B00B38FCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439718129AA8C0B00B38FCA /* Constants.swift */; };
 		7439718529AA8CE200B38FCA /* FlickrEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439718429AA8CE200B38FCA /* FlickrEndpoint.swift */; };
 		7439718629AA962C00B38FCA /* search_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 7439717429AA791D00B38FCA /* search_test.json */; };
+		7439718829AA987800B38FCA /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439718729AA987800B38FCA /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		7439717B29AA85CF00B38FCA /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		7439718129AA8C0B00B38FCA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7439718429AA8CE200B38FCA /* FlickrEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrEndpoint.swift; sourceTree = "<group>"; };
+		7439718729AA987800B38FCA /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +339,7 @@
 		7439717929AA858100B38FCA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7439718729AA987800B38FCA /* ListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				7439713529AA60AF00B38FCA /* Photo+URL.swift in Sources */,
 				7439715C29AA6EB500B38FCA /* FlickrSearchService.swift in Sources */,
 				7439717C29AA85CF00B38FCA /* ListViewModel.swift in Sources */,
+				7439718829AA987800B38FCA /* ListView.swift in Sources */,
 				7439712E29AA5F3C00B38FCA /* PhotoFeedResponse.swift in Sources */,
 				7439714029AA637000B38FCA /* Endpoint.swift in Sources */,
 				7439718229AA8C0B00B38FCA /* Constants.swift in Sources */,
@@ -688,7 +692,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OwnMac.FlickrFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -724,7 +730,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OwnMac.FlickrFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
