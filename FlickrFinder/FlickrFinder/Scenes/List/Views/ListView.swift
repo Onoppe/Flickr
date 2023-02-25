@@ -39,8 +39,9 @@ struct ListView: View {
                 }
                 .listStyle(GroupedListStyle())
                 .navigationTitle("Flickr Search")
-
             }
+            .navigationTitle("Flickr Search")
+
         }
         .searchable(text: $viewModel.searchText)
         .searchSuggestions {
@@ -52,6 +53,11 @@ struct ListView: View {
             }
         }
         .onSubmit(of: .search) {
+            Task {
+                await viewModel.fetchItems(loadMore: false)
+            }
+        }
+        .onAppear {
             Task {
                 await viewModel.fetchItems(loadMore: false)
             }

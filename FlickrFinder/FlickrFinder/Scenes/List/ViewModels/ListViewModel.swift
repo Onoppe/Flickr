@@ -16,7 +16,7 @@ final class ListViewModel: ObservableObject {
     // MARK: Internal
 
     @Published var photos: PhotoFeed.Photos = []
-    @Published var searchText = ""
+    @Published var searchText = "WarnerBros"
     @Published var historySearches: [String] = []
 
     private var currentPage: Int = 1
