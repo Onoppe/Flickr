@@ -11,7 +11,7 @@ protocol Endpoint {
     var path: String? { get }
     var scheme: String { get }
     var host: String { get }
-    var method: String { get }
+    var method: Method { get }
     var header: [String: String]? { get }
     var queryItems: [URLQueryItem] { get }
 }
