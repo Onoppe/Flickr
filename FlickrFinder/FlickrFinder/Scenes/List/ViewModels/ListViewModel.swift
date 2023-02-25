@@ -35,17 +35,17 @@ extension ListViewModel {
 
     func fetchItems() async {
         let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: currentPage))
-
+        
         switch result {
         case .success(let response):
             await MainActor.run { [weak self] in
                 guard let self else { return }
-
+                
                 self.photos = response.feed.photos
-
+                
                 // New photos fetched, so save the search text
                 saveHistorySearches()
-
+                
                 // Check the total and current page(s)
                 setPages(using: response)
             }
