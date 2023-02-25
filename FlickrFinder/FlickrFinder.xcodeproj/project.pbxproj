@@ -26,11 +26,11 @@
 		7439715A29AA6DF000B38FCA /* FlickrSearchServicable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439715929AA6DF000B38FCA /* FlickrSearchServicable.swift */; };
 		7439715C29AA6EB500B38FCA /* FlickrSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439715B29AA6EB500B38FCA /* FlickrSearchService.swift */; };
 		7439717229AA788B00B38FCA /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439717129AA788B00B38FCA /* Mockable.swift */; };
-		7439717529AA791D00B38FCA /* search_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 7439717429AA791D00B38FCA /* search_test.json */; };
 		7439717829AA79B700B38FCA /* FlickrSearchMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439717729AA79B700B38FCA /* FlickrSearchMockService.swift */; };
 		7439717C29AA85CF00B38FCA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439717B29AA85CF00B38FCA /* ListViewModel.swift */; };
 		7439718229AA8C0B00B38FCA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439718129AA8C0B00B38FCA /* Constants.swift */; };
 		7439718529AA8CE200B38FCA /* FlickrEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439718429AA8CE200B38FCA /* FlickrEndpoint.swift */; };
+		7439718629AA962C00B38FCA /* search_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 7439717429AA791D00B38FCA /* search_test.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -469,6 +469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7439718629AA962C00B38FCA /* search_test.json in Resources */,
 				7439710129AA5A2500B38FCA /* Preview Assets.xcassets in Resources */,
 				743970FD29AA5A2500B38FCA /* Assets.xcassets in Resources */,
 			);
@@ -478,7 +479,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7439717529AA791D00B38FCA /* search_test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

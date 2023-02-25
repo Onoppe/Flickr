@@ -29,30 +29,18 @@ final class ListViewModel: ObservableObject {
 
 extension ListViewModel {
 
-    func getItems() {
-        Task(priority: .background) {
-            await fetchItems()
-        }
-    }
-}
+    func fetchItems() async {
+       let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: 0))
 
-// MARK: - Private Helper Methods
+       switch result {
+       case .success(let response):
+           await MainActor.run { [weak self] in
+               guard let self else { return }
 
-
-extension ListViewModel {
-
-    private func fetchItems() async {
-        let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: 0))
-
-        switch result {
-        case .success(let response):
-            await MainActor.run { [weak self] in
-                guard let self else { return }
-
-                self.photos = response.feed.photos
-            }
-        default:
-            break
-        }
-    }
+               self.photos = response.feed.photos
+           }
+       default:
+           break
+       }
+   }
 }
