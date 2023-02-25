@@ -11,7 +11,7 @@ import SwiftUI
 struct FlickrFinderApp: App {
     var body: some Scene {
         WindowGroup {
-            ListView()
+            ListView(presenter: PhotoPresenter())
         }
     }
 }
