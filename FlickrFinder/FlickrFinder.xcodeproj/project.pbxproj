@@ -16,6 +16,7 @@
 		7439711729AA5A2500B38FCA /* FlickrFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439711629AA5A2500B38FCA /* FlickrFinderUITestsLaunchTests.swift */; };
 		7439712A29AA5D0E00B38FCA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439712929AA5D0E00B38FCA /* Photo.swift */; };
 		7439712C29AA5E8500B38FCA /* PhotoFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439712B29AA5E8500B38FCA /* PhotoFeed.swift */; };
+		7439712E29AA5F3C00B38FCA /* PhotoFeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439712D29AA5F3B00B38FCA /* PhotoFeedResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		7439711629AA5A2500B38FCA /* FlickrFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7439712929AA5D0E00B38FCA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7439712B29AA5E8500B38FCA /* PhotoFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeed.swift; sourceTree = "<group>"; };
+		7439712D29AA5F3B00B38FCA /* PhotoFeedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			children = (
 				7439712929AA5D0E00B38FCA /* Photo.swift */,
 				7439712B29AA5E8500B38FCA /* PhotoFeed.swift */,
+				7439712D29AA5F3B00B38FCA /* PhotoFeedResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7439712E29AA5F3C00B38FCA /* PhotoFeedResponse.swift in Sources */,
 				7439712C29AA5E8500B38FCA /* PhotoFeed.swift in Sources */,
 				7439712A29AA5D0E00B38FCA /* Photo.swift in Sources */,
 				743970FB29AA5A2500B38FCA /* ContentView.swift in Sources */,
