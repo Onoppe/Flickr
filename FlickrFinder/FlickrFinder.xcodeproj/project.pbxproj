@@ -25,6 +25,7 @@
 		7439715529AA69F300B38FCA /* Fetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439715429AA69F300B38FCA /* Fetchable.swift */; };
 		7439715A29AA6DF000B38FCA /* FlickrSearchServicable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439715929AA6DF000B38FCA /* FlickrSearchServicable.swift */; };
 		7439715C29AA6EB500B38FCA /* FlickrSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439715B29AA6EB500B38FCA /* FlickrSearchService.swift */; };
+		7439717229AA788B00B38FCA /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439717129AA788B00B38FCA /* Mockable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		7439715429AA69F300B38FCA /* Fetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetchable.swift; sourceTree = "<group>"; };
 		7439715929AA6DF000B38FCA /* FlickrSearchServicable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchServicable.swift; sourceTree = "<group>"; };
 		7439715B29AA6EB500B38FCA /* FlickrSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchService.swift; sourceTree = "<group>"; };
+		7439717129AA788B00B38FCA /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		7439710929AA5A2500B38FCA /* FlickrFinderTests */ = {
 			isa = PBXGroup;
 			children = (
+				7439717029AA787600B38FCA /* Mock */,
 				7439710A29AA5A2500B38FCA /* FlickrFinderTests.swift */,
 			);
 			path = FlickrFinderTests;
@@ -289,6 +292,14 @@
 				7439715B29AA6EB500B38FCA /* FlickrSearchService.swift */,
 			);
 			path = FlickrSearch;
+			sourceTree = "<group>";
+		};
+		7439717029AA787600B38FCA /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				7439717129AA788B00B38FCA /* Mockable.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7439710B29AA5A2500B38FCA /* FlickrFinderTests.swift in Sources */,
+				7439717229AA788B00B38FCA /* Mockable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
