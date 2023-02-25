@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Endpoint {
-    var path: String? { get }
+    var path: String { get }
     var scheme: String { get }
     var host: String { get }
     var method: Method { get }
