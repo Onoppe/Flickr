@@ -28,6 +28,7 @@
 		7439717229AA788B00B38FCA /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439717129AA788B00B38FCA /* Mockable.swift */; };
 		7439717529AA791D00B38FCA /* search_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 7439717429AA791D00B38FCA /* search_test.json */; };
 		7439717829AA79B700B38FCA /* FlickrSearchMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439717729AA79B700B38FCA /* FlickrSearchMockService.swift */; };
+		7439717C29AA85CF00B38FCA /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439717B29AA85CF00B38FCA /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		7439717129AA788B00B38FCA /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		7439717429AA791D00B38FCA /* search_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_test.json; sourceTree = "<group>"; };
 		7439717729AA79B700B38FCA /* FlickrSearchMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchMockService.swift; sourceTree = "<group>"; };
+		7439717B29AA85CF00B38FCA /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,8 @@
 		7439712629AA5C6A00B38FCA /* List */ = {
 			isa = PBXGroup;
 			children = (
+				7439717A29AA858A00B38FCA /* ViewModels */,
+				7439717929AA858100B38FCA /* Views */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -322,6 +326,21 @@
 				7439717729AA79B700B38FCA /* FlickrSearchMockService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7439717929AA858100B38FCA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7439717A29AA858A00B38FCA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7439717B29AA85CF00B38FCA /* ListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +476,7 @@
 			files = (
 				7439713529AA60AF00B38FCA /* Photo+URL.swift in Sources */,
 				7439715C29AA6EB500B38FCA /* FlickrSearchService.swift in Sources */,
+				7439717C29AA85CF00B38FCA /* ListViewModel.swift in Sources */,
 				7439712E29AA5F3C00B38FCA /* PhotoFeedResponse.swift in Sources */,
 				7439714029AA637000B38FCA /* Endpoint.swift in Sources */,
 				7439712C29AA5E8500B38FCA /* PhotoFeed.swift in Sources */,
