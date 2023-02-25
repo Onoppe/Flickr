@@ -17,6 +17,10 @@ final class ListViewModel: ObservableObject {
 
     @Published var photos: PhotoFeed.Photos = []
     @Published var searchText = ""
+    @Published var historySearches: [String] = []
+
+    private var currentPage: Int = 1
+    private var totalOfPages: Int? = nil
 
     // MARK: Initialiser
 
@@ -30,17 +34,40 @@ final class ListViewModel: ObservableObject {
 extension ListViewModel {
 
     func fetchItems() async {
-       let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: 0))
+        let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: currentPage))
 
-       switch result {
-       case .success(let response):
-           await MainActor.run { [weak self] in
-               guard let self else { return }
+        switch result {
+        case .success(let response):
+            await MainActor.run { [weak self] in
+                guard let self else { return }
 
-               self.photos = response.feed.photos
-           }
-       default:
-           break
-       }
-   }
+                self.photos = response.feed.photos
+
+                // New photos fetched, so save the search text
+                saveHistorySearches()
+
+                // Check the total and current page(s)
+                setPages(using: response)
+            }
+        default:
+            break
+        }
+    }
+}
+
+// MARK: - Private Helper Methods
+
+extension ListViewModel {
+
+    private func saveHistorySearches() {
+        guard !historySearches.contains(searchText) else { return }
+
+        historySearches.insert(searchText, at: 0)
+        Persistance.historySearches = historySearches
+    }
+
+    private func setPages(using response: PhotoFeedResponse) {
+        totalOfPages = response.feed.pages
+        currentPage = response.feed.page
+    }
 }
