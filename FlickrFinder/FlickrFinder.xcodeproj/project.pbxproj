@@ -14,6 +14,7 @@
 		7439710B29AA5A2500B38FCA /* FlickrFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439710A29AA5A2500B38FCA /* FlickrFinderTests.swift */; };
 		7439711529AA5A2500B38FCA /* FlickrFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439711429AA5A2500B38FCA /* FlickrFinderUITests.swift */; };
 		7439711729AA5A2500B38FCA /* FlickrFinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439711629AA5A2500B38FCA /* FlickrFinderUITestsLaunchTests.swift */; };
+		7439712A29AA5D0E00B38FCA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439712929AA5D0E00B38FCA /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		7439711029AA5A2500B38FCA /* FlickrFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7439711429AA5A2500B38FCA /* FlickrFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFinderUITests.swift; sourceTree = "<group>"; };
 		7439711629AA5A2500B38FCA /* FlickrFinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7439712929AA5D0E00B38FCA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		743970F729AA5A2500B38FCA /* FlickrFinder */ = {
 			isa = PBXGroup;
 			children = (
+				7439712829AA5CBA00B38FCA /* Models */,
 				7439712529AA5C5900B38FCA /* Scenes */,
 				7439712329AA5B1600B38FCA /* App */,
 				743970FA29AA5A2500B38FCA /* ContentView.swift */,
@@ -167,6 +170,14 @@
 			children = (
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		7439712829AA5CBA00B38FCA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7439712929AA5D0E00B38FCA /* Photo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7439712A29AA5D0E00B38FCA /* Photo.swift in Sources */,
 				743970FB29AA5A2500B38FCA /* ContentView.swift in Sources */,
 				743970F929AA5A2500B38FCA /* FlickrFinderApp.swift in Sources */,
 			);
