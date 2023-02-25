@@ -15,6 +15,14 @@ struct DetailView: View {
     }
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        AsyncImage(url: viewModel.photo?.getUrl(using: .normal)) { image in
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+        } placeholder: {
+            Image(systemName: "photo.fill")
+        }
+        .cornerRadius(10)
+        .navigationTitle(viewModel.photo?.title ?? "")
     }
 }
