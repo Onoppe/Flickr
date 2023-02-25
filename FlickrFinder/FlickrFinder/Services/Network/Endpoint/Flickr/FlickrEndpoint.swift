@@ -39,13 +39,13 @@ extension FlickrEndpoint: Endpoint  {
         switch self {
         case .search(let text, let page):
             return [
-                URLQueryItem(name: "method", value: "flickr.photos.search"),
-                URLQueryItem(name: "api_key", value: Constants.apiKey),
-                URLQueryItem(name: "text", value: text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)),
-                URLQueryItem(name: "per_page", value: "25"),
-                URLQueryItem(name: "format", value: "json"),
-                URLQueryItem(name: "nojsoncallback", value: "1"),
-                URLQueryItem(name: "page", value: "\(page)")]
+                URLQueryItem(name: .methodName, value: .methodValue),
+                URLQueryItem(name: .apiKeyName, value: Constants.apiKey),
+                URLQueryItem(name: .textName, value: text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)),
+                URLQueryItem(name: .perPageName, value: .perPageValue),
+                URLQueryItem(name: .formatName, value: .formatValue),
+                URLQueryItem(name: .noJsonCallbackName, value: .noJsonCallbackValue),
+                URLQueryItem(name: .pageName, value: "\(page)")]
         }
     }
 }
