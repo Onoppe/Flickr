@@ -9,6 +9,7 @@ import Foundation
 
 enum Constants {
     static let apiKey = "1508443e49213ff84d566777dc211f2a"
+
 }
 
 extension String {
@@ -29,4 +30,6 @@ extension String {
     static let noJsonCallbackValue = "1"
 
     static let pageName = "page"
+
+    static let historySearches = "historySearches"
 }

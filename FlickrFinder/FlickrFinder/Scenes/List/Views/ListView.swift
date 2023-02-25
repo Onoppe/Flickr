@@ -10,11 +10,11 @@ import SwiftUI
 struct ListView: View {
 
     @ObservedObject var viewModel = ListViewModel(service: FlickrSearchService())
-    
+
     var body: some View {
         NavigationView {
             List(viewModel.photos) { photo in
-                
+
                 HStack {
                     AsyncImage(url: photo.getUrl(using: .thumbnail)) { image in
                         image
@@ -31,13 +31,18 @@ struct ListView: View {
             .navigationTitle("Flickr Search")
         }
         .searchable(text: $viewModel.searchText)
+        .searchSuggestions {
+            ForEach(viewModel.historySearches, id: \.self) { text in
+                if text
+                    .starts(with: viewModel.searchText) {
+                    Text(text).searchCompletion(text)
+                }
+            }
+        }
         .onSubmit(of: .search) {
             Task {
                 await viewModel.fetchItems()
             }
-        }
-        .task {
-
         }
     }
 }

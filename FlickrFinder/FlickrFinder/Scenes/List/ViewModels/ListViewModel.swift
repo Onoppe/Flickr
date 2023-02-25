@@ -17,6 +17,7 @@ final class ListViewModel: ObservableObject {
 
     @Published var photos: PhotoFeed.Photos = []
     @Published var searchText = ""
+    @Published var historySearches: [String] = []
 
     // MARK: Initialiser
 
@@ -30,17 +31,31 @@ final class ListViewModel: ObservableObject {
 extension ListViewModel {
 
     func fetchItems() async {
-       let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: 0))
+        let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: 0))
 
-       switch result {
-       case .success(let response):
-           await MainActor.run { [weak self] in
-               guard let self else { return }
+        switch result {
+        case .success(let response):
+            await MainActor.run { [weak self] in
+                guard let self else { return }
 
-               self.photos = response.feed.photos
-           }
-       default:
-           break
-       }
-   }
+                self.photos = response.feed.photos
+            }
+        default:
+            break
+        }
+
+        saveHistorySearches()
+    }
+}
+
+// MARK: - Private Helper Methods
+
+extension ListViewModel {
+
+    private func saveHistorySearches() {
+        guard !historySearches.contains(searchText) else { return }
+
+        historySearches.insert(searchText, at: 0)
+        Persistance.historySearches = historySearches
+    }
 }
