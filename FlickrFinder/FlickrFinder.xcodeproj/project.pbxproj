@@ -95,6 +95,7 @@
 		743970F729AA5A2500B38FCA /* FlickrFinder */ = {
 			isa = PBXGroup;
 			children = (
+				7439712529AA5C5900B38FCA /* Scenes */,
 				7439712329AA5B1600B38FCA /* App */,
 				743970FA29AA5A2500B38FCA /* ContentView.swift */,
 				7439712429AA5B2700B38FCA /* Resources */,
@@ -143,6 +144,29 @@
 				743970FE29AA5A2500B38FCA /* FlickrFinder.entitlements */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7439712529AA5C5900B38FCA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7439712729AA5C7200B38FCA /* Detail */,
+				7439712629AA5C6A00B38FCA /* List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		7439712629AA5C6A00B38FCA /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		7439712729AA5C7200B38FCA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
