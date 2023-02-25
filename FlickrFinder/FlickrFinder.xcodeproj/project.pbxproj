@@ -26,6 +26,7 @@
 		7439715A29AA6DF000B38FCA /* FlickrSearchServicable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439715929AA6DF000B38FCA /* FlickrSearchServicable.swift */; };
 		7439715C29AA6EB500B38FCA /* FlickrSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439715B29AA6EB500B38FCA /* FlickrSearchService.swift */; };
 		7439717229AA788B00B38FCA /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439717129AA788B00B38FCA /* Mockable.swift */; };
+		7439717529AA791D00B38FCA /* search_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 7439717429AA791D00B38FCA /* search_test.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		7439715929AA6DF000B38FCA /* FlickrSearchServicable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchServicable.swift; sourceTree = "<group>"; };
 		7439715B29AA6EB500B38FCA /* FlickrSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchService.swift; sourceTree = "<group>"; };
 		7439717129AA788B00B38FCA /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		7439717429AA791D00B38FCA /* search_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_test.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,9 +299,18 @@
 		7439717029AA787600B38FCA /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				7439717329AA791400B38FCA /* JSON */,
 				7439717129AA788B00B38FCA /* Mockable.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		7439717329AA791400B38FCA /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				7439717429AA791D00B38FCA /* search_test.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7439717529AA791D00B38FCA /* search_test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
