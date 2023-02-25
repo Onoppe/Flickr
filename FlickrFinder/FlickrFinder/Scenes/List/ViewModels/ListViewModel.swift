@@ -7,4 +7,15 @@
 
 import Foundation
 
-final class ListViewModel: ObservableObject {}
+final class ListViewModel: ObservableObject {
+
+    // MARK: Private
+
+    private let service: FlickrSearchServicable
+
+    // MARK: Initialiser
+
+    init(service: FlickrSearchServicable) {
+        self.service = service
+    }
+}

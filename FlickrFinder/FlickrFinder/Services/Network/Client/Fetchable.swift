@@ -12,7 +12,6 @@ protocol Fetchable {
                              model: T.Type) async -> Result<T, NetworkError>
 }
 
-
 // MARK: - Public
 
 extension Fetchable {
