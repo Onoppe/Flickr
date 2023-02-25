@@ -22,6 +22,11 @@ final class ListViewModel: ObservableObject {
     private var currentPage: Int = 1
     private var totalOfPages: Int? = nil
 
+    var shouldLoadMore: Bool {
+        guard let totalPages = totalOfPages else { return false }
+        return currentPage < totalPages
+    }
+
     // MARK: Initialiser
 
     init(service: FlickrSearchServicable) {
@@ -33,21 +38,27 @@ final class ListViewModel: ObservableObject {
 
 extension ListViewModel {
 
-    func fetchItems() async {
+    func fetchItems(loadMore: Bool) async {
         let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: currentPage))
-        
+
         switch result {
         case .success(let response):
             await MainActor.run { [weak self] in
                 guard let self else { return }
-                
-                self.photos = response.feed.photos
-                
-                // New photos fetched, so save the search text
-                saveHistorySearches()
-                
+
+                if loadMore {
+                    self.photos.append(contentsOf: response.feed.photos)
+                } else {
+                    self.photos = response.feed.photos
+
+                    // New photos fetched, so save the search text
+                    saveHistorySearches()
+
+                }
+
                 // Check the total and current page(s)
                 setPages(using: response)
+                currentPage += 1
             }
         default:
             break

@@ -25,10 +25,16 @@ struct ListView: View {
                     }.frame(width: 50, height: 50)
                         .cornerRadius(10)
                     Text(photo.title ?? "")
+                }.task {
+                    if self.viewModel.shouldLoadMore {
+                        await viewModel.fetchItems(loadMore: true)
+                    }
                 }
             }
             .listStyle(GroupedListStyle())
             .navigationTitle("Flickr Search")
+
+
         }
         .searchable(text: $viewModel.searchText)
         .searchSuggestions {
@@ -41,7 +47,7 @@ struct ListView: View {
         }
         .onSubmit(of: .search) {
             Task {
-                await viewModel.fetchItems()
+                await viewModel.fetchItems(loadMore: false)
             }
         }
     }
