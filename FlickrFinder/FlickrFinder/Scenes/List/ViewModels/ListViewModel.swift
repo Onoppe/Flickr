@@ -56,7 +56,6 @@ extension ListViewModel {
 
                     // New photos fetched, so save the search text
                     saveHistorySearches()
-
                 }
 
                 // Check the total and current page(s)
@@ -65,7 +64,6 @@ extension ListViewModel {
         case .failure(let error):
             hasError = true
             networkError = error
-
         }
     }
 }

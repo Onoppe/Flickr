@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  FlickrFinder
+
+  Created by Omar Noppe on 26/02/2023.
+  
+*/
+
+"The URL is not valid" = "The URL is not valid";
+"We couldn't get a response right now" = "We couldn't get a response right now";
+"We failed to decode" = "We failed to decode";
+"We got the wrong statusCode" = "We got the wrong statusCode";
+"Something went wrong" = "Something went wrong: %@";
+
+"Retry" = "Retry";
+"Flickr Search" = "Flickr Search";

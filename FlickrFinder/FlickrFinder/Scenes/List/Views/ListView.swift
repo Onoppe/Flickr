@@ -35,14 +35,13 @@ struct ListView: View {
                 }
 
                 .listStyle(GroupedListStyle())
-                .navigationTitle("Flickr Search")
+                .navigationTitle("Flickr Search".localized)
             }
             .refreshable {
                 if self.viewModel.shouldLoadMore {
                     await viewModel.fetchItems(loadMore: true)
                 }
             }
-            .navigationTitle("Flickr Search")
         }
         .searchable(text: $viewModel.searchText)
         .searchSuggestions {
@@ -64,7 +63,7 @@ struct ListView: View {
             }
         }
         .alert(isPresented: $viewModel.hasError, error: viewModel.networkError) {
-            Button("Retry") {
+            Button("Retry".localized) {
                 Task {
                     await viewModel.fetchItems()
                 }
