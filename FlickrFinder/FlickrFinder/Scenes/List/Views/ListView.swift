@@ -18,28 +18,31 @@ struct ListView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.photos) { photo in
-                NavigationLink(destination: presenter.getDetailView(with: photo)) {
+            VStack {
+                List(viewModel.photos) { photo in
+                    NavigationLink(destination: presenter.getDetailView(with: photo)) {
 
-                    HStack {
-                        AsyncImage(url: photo.getUrl(using: .thumbnail)) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                        } placeholder: {
-                            Image(systemName: "photo.fill")
-                        }.frame(width: 50, height: 50)
-                            .cornerRadius(10)
-                        Text(photo.title ?? "")
+                        HStack {
+                            AsyncImage(url: photo.getUrl(using: .thumbnail)) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                            } placeholder: {
+                                Image(systemName: "photo.fill")
+                            }.frame(width: 50, height: 50)
+                                .cornerRadius(10)
+                            Text(photo.title ?? "")
+                        }
                     }
+                    .listStyle(GroupedListStyle())
+                    .navigationTitle("Flickr Search".localized)
                 }
-
-                .listStyle(GroupedListStyle())
-                .navigationTitle("Flickr Search".localized)
-            }
-            .refreshable {
                 if self.viewModel.shouldLoadMore {
-                    await viewModel.fetchItems(loadMore: true)
+                    Button("Load more".localized) {
+                        Task {
+                            await viewModel.fetchItems(loadMore: true)
+                        }
+                    }
                 }
             }
         }
@@ -54,12 +57,12 @@ struct ListView: View {
         }
         .onSubmit(of: .search) {
             Task {
-                await viewModel.fetchItems(loadMore: false)
+                await viewModel.fetchItems()
             }
         }
         .onAppear {
             Task {
-                await viewModel.fetchItems(loadMore: false)
+                await viewModel.fetchItems()
             }
         }
         .alert(isPresented: $viewModel.hasError, error: viewModel.networkError) {
