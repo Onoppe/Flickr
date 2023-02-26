@@ -31,17 +31,18 @@ struct ListView: View {
                         }.frame(width: 50, height: 50)
                             .cornerRadius(10)
                         Text(photo.title ?? "")
-                    }.task {
-                        if self.viewModel.shouldLoadMore {
-                            await viewModel.fetchItems(loadMore: true)
-                        }
                     }
                 }
+
                 .listStyle(GroupedListStyle())
                 .navigationTitle("Flickr Search")
             }
+            .refreshable {
+                if self.viewModel.shouldLoadMore {
+                    await viewModel.fetchItems(loadMore: true)
+                }
+            }
             .navigationTitle("Flickr Search")
-
         }
         .searchable(text: $viewModel.searchText)
         .searchSuggestions {
@@ -60,6 +61,13 @@ struct ListView: View {
         .onAppear {
             Task {
                 await viewModel.fetchItems(loadMore: false)
+            }
+        }
+        .alert(isPresented: $viewModel.hasError, error: viewModel.networkError) {
+            Button("Retry") {
+                Task {
+                    await viewModel.fetchItems()
+                }
             }
         }
     }

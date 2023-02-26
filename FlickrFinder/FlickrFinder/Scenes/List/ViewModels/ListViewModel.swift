@@ -13,11 +13,15 @@ final class ListViewModel: ObservableObject {
 
     private let service: FlickrSearchServicable
 
+    @Published private(set) var networkError: NetworkError?
+
     // MARK: Internal
 
     @Published var photos: PhotoFeed.Photos = []
     @Published var searchText = "WarnerBros"
     @Published var historySearches: [String] = []
+    @Published var hasError = false
+
 
     private var currentPage: Int = 1
     private var totalOfPages: Int? = nil
@@ -38,13 +42,12 @@ final class ListViewModel: ObservableObject {
 
 extension ListViewModel {
 
-    func fetchItems(loadMore: Bool) async {
+    @MainActor
+    func fetchItems(loadMore: Bool = false) async {
         let result = await service.search(with: FlickrEndpoint.search(text: searchText, page: currentPage))
 
         switch result {
         case .success(let response):
-            await MainActor.run { [weak self] in
-                guard let self else { return }
 
                 if loadMore {
                     self.photos.append(contentsOf: response.feed.photos)
@@ -59,9 +62,10 @@ extension ListViewModel {
                 // Check the total and current page(s)
                 setPages(using: response)
                 currentPage += 1
-            }
-        default:
-            break
+        case .failure(let error):
+            hasError = true
+            networkError = error
+
         }
     }
 }

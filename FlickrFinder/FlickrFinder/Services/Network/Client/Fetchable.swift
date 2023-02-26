@@ -28,7 +28,7 @@ extension Fetchable {
             let result = try await URLSession.shared.data(for: request)
             return transform(from: result, type: model)
         } catch {
-            return .failure(.unknown)
+            return .failure(.unknown(error))
         }
     }
 }
