@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		743970F929AA5A2500B38FCA /* FlickrFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743970F829AA5A2500B38FCA /* FlickrFinderApp.swift */; };
-		743970FB29AA5A2500B38FCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743970FA29AA5A2500B38FCA /* ContentView.swift */; };
 		743970FD29AA5A2500B38FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 743970FC29AA5A2500B38FCA /* Assets.xcassets */; };
 		7439710129AA5A2500B38FCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7439710029AA5A2500B38FCA /* Preview Assets.xcassets */; };
 		7439710B29AA5A2500B38FCA /* FlickrFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439710A29AA5A2500B38FCA /* FlickrFinderTests.swift */; };
@@ -58,7 +57,6 @@
 /* Begin PBXFileReference section */
 		743970F529AA5A2500B38FCA /* FlickrFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		743970F829AA5A2500B38FCA /* FlickrFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFinderApp.swift; sourceTree = "<group>"; };
-		743970FA29AA5A2500B38FCA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		743970FC29AA5A2500B38FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		743970FE29AA5A2500B38FCA /* FlickrFinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlickrFinder.entitlements; sourceTree = "<group>"; };
 		7439710029AA5A2500B38FCA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			children = (
 				7439712329AA5B1600B38FCA /* App */,
 				7439718029AA8BE100B38FCA /* Constants */,
-				743970FA29AA5A2500B38FCA /* ContentView.swift */,
 				7439713229AA607500B38FCA /* Helpers */,
 				7439712829AA5CBA00B38FCA /* Models */,
 				743970FF29AA5A2500B38FCA /* Preview Content */,
@@ -532,7 +529,6 @@
 				7439712A29AA5D0E00B38FCA /* Photo.swift in Sources */,
 				7439715529AA69F300B38FCA /* Fetchable.swift in Sources */,
 				7439713129AA604600B38FCA /* PhotoSize.swift in Sources */,
-				743970FB29AA5A2500B38FCA /* ContentView.swift in Sources */,
 				7439719329AAB93400B38FCA /* DetailView.swift in Sources */,
 				7439718529AA8CE200B38FCA /* FlickrEndpoint.swift in Sources */,
 				7439715A29AA6DF000B38FCA /* FlickrSearchServicable.swift in Sources */,
